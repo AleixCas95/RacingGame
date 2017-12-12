@@ -147,6 +147,14 @@ update_status ModulePlayer::Update(float dt)
 	sprintf_s(title, "%.1f Km/h", vehicle->GetKmh());
 	App->window->SetTitle(title);
 
+	vehicle->GetTransform(&matrix);
+	position = matrix.translation();
+	cameraPos = position;
+	cameraPos.y += vehicle->info.chassis_size.y + 2;
+	cameraPos.z += -vehicle->info.chassis_size.z - 10;
+
+	App->camera->Look(cameraPos, position, true);
+
 	return UPDATE_CONTINUE;
 }
 
