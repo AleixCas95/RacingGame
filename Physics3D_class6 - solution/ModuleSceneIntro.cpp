@@ -20,8 +20,17 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 
-	s.size = vec3(5, 3, 1);
+	s.size = vec3(9, 1, 30);
+	s1.size = vec3(1, 2, 30);
+	s2.size = vec3(1, 2, 30);
 	s.SetPos(0, 2.5f, 20);
+	s1.SetPos(-5, 3.5f, 20);
+	s2.SetPos(5, 3.5f, 20);
+
+	sensor = App->physics->AddBody(s, 0.0f);
+	sensor = App->physics->AddBody(s1, 0.0f);
+	sensor = App->physics->AddBody(s2, 0.0f);
+
 
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(true);
@@ -47,6 +56,8 @@ update_status ModuleSceneIntro::Update(float dt)
 
 	sensor->GetTransform(&s.transform);
 	s.Render();
+	s1.Render();
+	s2.Render();
 
 	return UPDATE_CONTINUE;
 }

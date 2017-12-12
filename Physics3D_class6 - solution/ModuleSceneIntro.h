@@ -23,5 +23,7 @@ public:
 
 public:
 	Cube s;
+	Cube s1;
+	Cube s2;
 	PhysBody3D* sensor;
 };

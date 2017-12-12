@@ -35,7 +35,7 @@ bool ModulePlayer::Start()
 	float connection_height = 1.2f;
 	float wheel_radius = 1.0f;
 	float wheel_width = 0.5f;
-	float suspensionRestLength = 1.2f;
+	float suspensionRestLength = 0.6f;
 
 	// Don't change anything below this line ------------------
 
@@ -97,7 +97,7 @@ bool ModulePlayer::Start()
 	car.wheels[3].steering = false;
 
 	vehicle = App->physics->AddVehicle(car);
-	vehicle->SetPos(0, 12, 10);
+	vehicle->SetPos(0, 3.7f, 10);
 
 	return true;
 }
