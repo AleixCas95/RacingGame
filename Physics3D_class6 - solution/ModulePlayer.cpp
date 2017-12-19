@@ -99,6 +99,8 @@ bool ModulePlayer::Start()
 	vehicle = App->physics->AddVehicle(car);
 	vehicle->SetPos(0, 3.7f, 10);
 
+	App->camera->Follow(vehicle, 10, 10, 1.f);
+
 	return true;
 }
 
@@ -153,7 +155,7 @@ update_status ModulePlayer::Update(float dt)
 	cameraPos.y += vehicle->info.chassis_size.y + 2;
 	cameraPos.z += -vehicle->info.chassis_size.z - 10;
 
-	App->camera->Look(cameraPos, position, true);
+	//App->camera->Look(cameraPos, position, true);
 
 	return UPDATE_CONTINUE;
 }
