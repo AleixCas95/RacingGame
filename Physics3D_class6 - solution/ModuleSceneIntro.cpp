@@ -20,31 +20,31 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 
-	s.size = vec3(9, 1, 150);
-	s1.size = vec3(1, 2, 150);
-	s2.size = vec3(1, 2, 150);
-	s3.size = vec3(1, 2, 20);
-	s3.SetRotation(30, vec3(0, 1, 0));
-	s4.size = vec3(1, 2, 20);
+	s.size = vec3(9, 1, 150);//1
+	s1.size = vec3(1, 2, 150);//pdreta
+	s2.size = vec3(1, 2, 150);//paretesquerra
+	s3.size = vec3(1, 2, 20);//pdesquerra2
+	s3.SetRotation(36, vec3(0, 1, 0));
+	s4.size = vec3(1, 2, 20); //pdreta2
 	s4.SetRotation(30, vec3(0, 1, 0));
-	s5.size = vec3(9, 2, 25);
-	s5.SetRotation(30, vec3(0, 1, 0));
-	s6.size = vec3(1, 2, 30);
-	s6.SetRotation(50, vec3(0, 1, 0));
-	s7.size = vec3(1, 2, 25);
-	s7.SetRotation(50, vec3(0, 1, 0));
-	s8.size = vec3(9, 2, 25);
-	s8.SetRotation(50, vec3(0, 1, 0));
+	s5.size = vec3(9, 2, 25);//2
+	s5.SetRotation(33, vec3(0, 1, 0));
+	s6.size = vec3(1, 2, 30);//pdereta3
+	s6.SetRotation(52, vec3(0, 1, 0));
+	s7.size = vec3(1, 2, 25);//pesquerra3
+	s7.SetRotation(56, vec3(0, 1, 0));
+	s8.size = vec3(11, 2, 25);//3
+	s8.SetRotation(53, vec3(0, 1, 0));
 
-	s.SetPos(0, 2.5f, 20);
+	s.SetPos(0, 2.5f, 20);//terro
 	s1.SetPos(-5, 3.5f, 20);
-	s2.SetPos(5, 3.5f, 20);
-	s3.SetPos(10, 3.5f, 103);
-	s4.SetPos(0, 3.5f, 103);
-	s5.SetPos(5, 2, 103);
-	s6.SetPos(15.6f, 3.5f, 120);
-	s7.SetPos(24.6f, 3.5f, 120);
-	s8.SetPos(18, 2, 120);
+	s2.SetPos(5.2f, 3.5f, 20);
+	s3.SetPos(11, 3.5f, 103);
+	s4.SetPos(0, 3.5f, 104);
+	s5.SetPos(5, 2, 103);//2terra
+	s6.SetPos(16.8f, 3.5f, 122);
+	s7.SetPos(27.2f, 3.5f, 118);
+	s8.SetPos(21, 2, 120);//3rterrra
 
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(false);
