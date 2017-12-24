@@ -28,13 +28,23 @@ bool ModuleSceneIntro::Start()
 	s4.size = vec3(1, 2, 20); //pdreta2
 	s4.SetRotation(30, vec3(0, 1, 0));
 	s5.size = vec3(9, 2, 25);//2
-	s5.SetRotation(33, vec3(0, 1, 0));
+	s5.SetRotation(35, vec3(0, 1, 0));
 	s6.size = vec3(1, 2, 30);//pdereta3
 	s6.SetRotation(52, vec3(0, 1, 0));
-	s7.size = vec3(1, 2, 25);//pesquerra3
+	s7.size = vec3(1, 2, 18);//pesquerra3
 	s7.SetRotation(56, vec3(0, 1, 0));
-	s8.size = vec3(11, 2, 25);//3
-	s8.SetRotation(53, vec3(0, 1, 0));
+	s8.size = vec3(10, 2, 25);//3
+	s8.SetRotation(55, vec3(0, 1, 0));
+	s9.size = vec3(11, 2, 70);//4
+	s9.SetRotation(270, vec3(0, 1, 0));
+	s10.size = vec3(1, 2, 70);//paretderta4
+	s10.SetRotation(270, vec3(0, 1, 0));
+	s11.size = vec3(1, 2, 65);//pe4
+	s11.SetRotation(270, vec3(0, 1, 0));
+	s12.size = vec3(11, 2, 60);
+
+
+
 
 	s.SetPos(0, 2.5f, 20);//terro
 	s1.SetPos(-5, 3.5f, 20);
@@ -43,8 +53,14 @@ bool ModuleSceneIntro::Start()
 	s4.SetPos(0, 3.5f, 104);
 	s5.SetPos(5, 2, 103);//2terra
 	s6.SetPos(16.8f, 3.5f, 122);
-	s7.SetPos(27.2f, 3.5f, 118);
-	s8.SetPos(21, 2, 120);//3rterrra
+	s7.SetPos(24.1f, 3.5f, 115.8f);
+	s8.SetPos(20.7f, 2, 119);//3rterrra
+	s9.SetPos(62, 2, 126);
+	s10.SetPos(62.8f, 3.5f, 131);
+	s11.SetPos(63.8f, 3.5f, 120.7f);
+	s12.SetPos(102.5f, 2, 101);
+
+
 
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(false);
@@ -81,6 +97,24 @@ bool ModuleSceneIntro::Start()
 	sensor8 = App->physics->AddBody(s8, 0.0f);
 	sensor8->SetAsSensor(false);
 	sensor8->collision_listeners.add(this);
+
+
+	sensor9 = App->physics->AddBody(s9, 0.0f);
+	sensor9->SetAsSensor(false);
+	sensor9->collision_listeners.add(this);
+
+
+	sensor10 = App->physics->AddBody(s10, 0.0f);
+	sensor10->SetAsSensor(false);
+	sensor10->collision_listeners.add(this);
+
+	sensor11 = App->physics->AddBody(s11, 0.0f);
+	sensor11->SetAsSensor(false);
+	sensor11->collision_listeners.add(this);
+
+	sensor12 = App->physics->AddBody(s12, 0.0f);
+	sensor12->SetAsSensor(false);
+	sensor12->collision_listeners.add(this);
 
 	return ret;
 }
@@ -119,6 +153,12 @@ update_status ModuleSceneIntro::Update(float dt)
 	s6.Render();
 	s7.Render();
 	s8.Render();
+	s9.Render();
+	s10.Render();
+	s11.Render();
+	s12.Render();
+
+
 	return UPDATE_CONTINUE;
 }
 
