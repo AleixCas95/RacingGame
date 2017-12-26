@@ -44,8 +44,17 @@ bool ModuleSceneIntro::Start()
 	s12.size = vec3(11, 2, 60);
 	s13.size = vec3(1, 2, 10);
 	s13.SetRotation(270, vec3(0, 1, 0));
-	s14.size = vec3(1, 2, 65);
+	s14.size = vec3(1, 2, 58);
 	s15.size = vec3(1, 2, 60);
+	s16.size = vec3(9, 2, 30);
+	s16.SetRotation(90, vec3(0, 1, 0));
+	s17.size = vec3(2.5f, 2, 20);
+	s17.SetRotation(90, vec3(0, 1, 0));
+	s18.size = vec3(1, 2, 78);
+	s18.SetRotation(90, vec3(0, 1, 0));
+	s19.size = vec3(9, 2, 50);
+	s19.SetRotation(90, vec3(0, 1, 0));
+	s20.size = vec3(9, 2, 80);
 
 	s.SetPos(0, 2.5f, 20);//terro
 	s1.SetPos(-5, 3.5f, 20);
@@ -61,8 +70,14 @@ bool ModuleSceneIntro::Start()
 	s11.SetPos(63.8f, 3.5f, 120.7f);
 	s12.SetPos(102.5f, 2, 101);
 	s13.SetPos(102.8f, 3.5f, 131);
-	s14.SetPos(108.3f, 3.5f, 99);
+	s14.SetPos(108.3f, 3.5f, 102.6f);
 	s15.SetPos(96.7f, 3.5f, 91.2f);
+	s16.SetPos(112, 2, 66.5f);
+	s17.SetPos(117.8f, 3.5f, 72.35f);
+	s18.SetPos(136, 3.5f, 61.7f);
+	s19.SetPos(152, 2, 66.5f);
+	s20.SetPos(172.6f, 2, 111);
+
 
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(false);
@@ -131,7 +146,26 @@ bool ModuleSceneIntro::Start()
 	sensor15->SetAsSensor(false);
 	sensor15->collision_listeners.add(this);
 
+	sensor16 = App->physics->AddBody(s16, 0.0f);
+	sensor16->SetAsSensor(false);
+	sensor16->collision_listeners.add(this);
 	
+	sensor17 = App->physics->AddBody(s17, 0.0f);
+	sensor17->SetAsSensor(false);
+	sensor17->collision_listeners.add(this);
+
+	sensor18 = App->physics->AddBody(s18, 0.0f);
+	sensor18->SetAsSensor(false);
+	sensor18->collision_listeners.add(this);
+
+	sensor19 = App->physics->AddBody(s19, 0.0f);
+	sensor19->SetAsSensor(false);
+	sensor19->collision_listeners.add(this);
+
+	sensor20 = App->physics->AddBody(s20, 0.0f);
+	sensor20->SetAsSensor(false);
+	sensor20->collision_listeners.add(this);
+
 	return ret;
 }
 
@@ -176,6 +210,11 @@ update_status ModuleSceneIntro::Update(float dt)
 	s13.Render();
 	s14.Render();
 	s15.Render();
+	s16.Render();
+	s17.Render();
+	s18.Render();
+	s19.Render();
+	s20.Render();
 
 	return UPDATE_CONTINUE;
 }
