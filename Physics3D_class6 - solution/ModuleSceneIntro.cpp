@@ -95,7 +95,20 @@ bool ModuleSceneIntro::Start()
 	s41.SetRotation(-90, vec3(0, 1, 0));
 	s42.size = vec3(1, 2, 300);
 	s42.SetRotation(-90, vec3(0, 1, 0));
-
+	s43.size = vec3(13, 2, 13);
+	s43.SetRotation(-130, vec3(0, 1, 0));
+	s44.size = vec3(13, 2, 15);
+	s44.SetRotation(125, vec3(0, 1, 0));
+	s45.size = vec3 ( 1, 2, 19);
+	s45.SetRotation(-135, vec3(0, 1, 0));
+	s46.size = vec3(1, 2, 6);
+	s46.SetRotation(-135, vec3(0, 1, 0));
+	s47.size = vec3(13, 2, 15);
+	s47.SetRotation(-170, vec3(0, 1, 0));
+	s48.size = vec3(1, 2, 15);
+	s48.SetRotation(-170, vec3(0, 1, 0));
+	s49.size = vec3(1, 2, 7);
+	s49.SetRotation(-170, vec3(0, 1, 0));
 
 	s.SetPos(0, 2.5f, 20);//terro
 	s1.SetPos(-5, 3.5f, 20);
@@ -140,6 +153,13 @@ bool ModuleSceneIntro::Start()
 	s40.SetPos(132.3f, 3.5f, 181.9f);
 	s41.SetPos(-21.6f, 3.5f, 183.4f);
 	s42.SetPos(-20.5f, 3.5f, 165.045f);
+	s43.SetPos(-170, 2, 176);
+	s44.SetPos(-175, 2, 170);
+	s45.SetPos(-178, 3.5f, 177.2f);
+	s46.SetPos(-172.2f, 3.5f, 163);
+	s47.SetPos(-180, 2, 162);
+	s48.SetPos(-185.9f, 3.5f, 163.3f);
+	s49.SetPos(-174.767f, 3.5f, 157.7f);
 
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(false);
@@ -315,7 +335,39 @@ bool ModuleSceneIntro::Start()
 	sensor42 = App->physics->AddBody(s42, 0.0f);
 	sensor42->SetAsSensor(false);
 	sensor42->collision_listeners.add(this);
-	
+
+	sensor43 = App->physics->AddBody(s43, 0.0f);
+	sensor43->SetAsSensor(false);
+	sensor43->collision_listeners.add(this);
+
+	sensor44 = App->physics->AddBody(s44, 0.0f);
+	sensor44->SetAsSensor(false);
+	sensor44->collision_listeners.add(this);
+
+	sensor45 = App->physics->AddBody(s45, 0.0f);
+	sensor45->SetAsSensor(false);
+	sensor45->collision_listeners.add(this);
+
+	sensor46 = App->physics->AddBody(s46, 0.0f);
+	sensor46->SetAsSensor(false);
+	sensor46->collision_listeners.add(this);
+
+	sensor47 = App->physics->AddBody(s47, 0.0f);
+	sensor47->SetAsSensor(false);
+	sensor47->collision_listeners.add(this);
+
+	sensor48 = App->physics->AddBody(s48, 0.0f);
+	sensor48->SetAsSensor(false);
+	sensor48->collision_listeners.add(this);
+
+	sensor49 = App->physics->AddBody(s49, 0.0f);
+	sensor49->SetAsSensor(false);
+	sensor49->collision_listeners.add(this);
+
+	sensor50 = App->physics->AddBody(s50, 0.0f);
+	sensor50->SetAsSensor(false);
+	sensor50->collision_listeners.add(this);
+
 
 	return ret;
 }
@@ -388,6 +440,14 @@ update_status ModuleSceneIntro::Update(float dt)
 	s40.Render();
 	s41.Render();
 	s42.Render();
+	s43.Render();
+	s44.Render();
+	s45.Render();
+	s46.Render();
+	s47.Render();
+	s48.Render();
+	s49.Render();
+	s50.Render();
 
 
 	return UPDATE_CONTINUE;
