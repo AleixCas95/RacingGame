@@ -3,6 +3,7 @@
 #include "ModuleSceneIntro.h"
 #include "Primitive.h"
 #include "PhysBody3D.h"
+#include "Timer.h"
 
 ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -20,26 +21,50 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 
+	//sensor meta
+	sensormeta.size = vec3(15, 15, 1);
+	sensormeta.SetPos(0, 0, -20);
+	sensormeta1 = App->physics->AddBody(sensormeta, 0.0f);
+	sensormeta1->SetAsSensor(true);
+	sensormeta1->collision_listeners.add(this);
+
+	//checkpoint1
+	checkpoint1.size = vec3(15, 15, 1);
+	//checkpoint1.SetPos();
+
+
 	s.size = vec3(10, 1, 150);//1
+	s.color = Blue;
 	s1.size = vec3(1, 2, 150);//pdreta
+	s1.color = Purple;
 	s2.size = vec3(1, 2, 150);//paretesquerra
+	s2.color = Purple;
 	s3.size = vec3(1, 2, 20);//pdesquerra2
+	s3.color = Purple;
 	s3.SetRotation(36, vec3(0, 1, 0));
 	s4.size = vec3(1, 2, 20); //pdreta2
+	s4.color = Purple;
 	s4.SetRotation(30, vec3(0, 1, 0));
 	s5.size = vec3(9, 2, 25);//2
 	s5.SetRotation(35, vec3(0, 1, 0));
+	s5.color = Blue;
 	s6.size = vec3(1, 2, 30);//pdereta3
+	s6.color = Purple;
 	s6.SetRotation(52, vec3(0, 1, 0));
 	s7.size = vec3(1, 2, 18);//pesquerra3
+	s7.color = Purple;
 	s7.SetRotation(56, vec3(0, 1, 0));
 	s8.size = vec3(10, 2, 25);//3
+	s8.color = Blue;
 	s8.SetRotation(55, vec3(0, 1, 0));
 	s9.size = vec3(11, 2, 70);//4
+	s9.color = Blue;
 	s9.SetRotation(270, vec3(0, 1, 0));
 	s10.size = vec3(1, 2, 70);//paretderta4
+	s10.color = Purple;
 	s10.SetRotation(270, vec3(0, 1, 0));
 	s11.size = vec3(1, 2, 65);//pe4
+	s11.color = Purple;
 	s11.SetRotation(270, vec3(0, 1, 0));
 	s12.size = vec3(11, 2, 60);
 	s13.size = vec3(1, 2, 10);
@@ -592,6 +617,9 @@ update_status ModuleSceneIntro::Update(float dt)
 	sensor->GetTransform(&s7.transform);
 	sensor->GetTransform(&s8.transform);*/
 
+	sensormeta.Render();
+
+
 	s.Render();
 	s1.Render();
 	s2.Render();
@@ -680,5 +708,11 @@ update_status ModuleSceneIntro::Update(float dt)
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
+	if (body1 == sensormeta1)
+	{
+		App->scene_intro->lap_timer.Start();
+		
+	}
+
 	LOG("Hit!");
 }

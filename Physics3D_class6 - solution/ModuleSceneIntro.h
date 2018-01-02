@@ -27,10 +27,18 @@ public:
 	Cube s43, s44, s45, s46, s47, s48, s49, s50, s51, s52, s53, s54, s55, s56, s57, s58, s59, s60, s61, s62;
 	Cube s63, s64, s65, s66, s67, s68, s69, s70, s71, s72, s73, s74, s75, s76, s77, s78, s79;
 
+	Cube sensormeta,checkpoint1;
+
 	PhysBody3D* sensor, *sensor1, *sensor2, *sensor3, *sensor4, *sensor5, *sensor6, *sensor7, *sensor8, *sensor9, *sensor10, *sensor11, *sensor12, *sensor13, *sensor14;
 	PhysBody3D* sensor15, *sensor16, *sensor17, *sensor18, *sensor19, *sensor20, *sensor21, *sensor22, *sensor23, *sensor24, *sensor25, *sensor26, *sensor27, *sensor28;
 	PhysBody3D* sensor29, *sensor30, *sensor31, *sensor32, *sensor33, *sensor34, *sensor35, *sensor36, *sensor37, *sensor38, *sensor39, *sensor40, *sensor41, *sensor42;
 	PhysBody3D* sensor43, *sensor44, *sensor45, *sensor46, *sensor47, *sensor48, *sensor49, *sensor50, *sensor51, *sensor52, *sensor53, *sensor54, *sensor55, *sensor56;
 	PhysBody3D *sensor57, *sensor58, *sensor59, *sensor60, *sensor61, *sensor62, *sensor63, *sensor64, *sensor65, *sensor66, *sensor67, *sensor68, *sensor69;
 	PhysBody3D *sensor70, *sensor71, *sensor72, *sensor73, *sensor74, *sensor75, *sensor76, *sensor77, *sensor78, *sensor79;
+	
+	PhysBody3D *sensormeta1, *sensorcheckpoint1;;
+
+	Timer lap_timer;
+	int laps = 0;
+	
 };

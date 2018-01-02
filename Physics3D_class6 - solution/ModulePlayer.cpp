@@ -4,6 +4,7 @@
 #include "Primitive.h"
 #include "PhysVehicle3D.h"
 #include "PhysBody3D.h"
+#include "Timer.h"
 
 ModulePlayer::ModulePlayer(Application* app, bool start_enabled) : Module(app, start_enabled), vehicle(NULL)
 {
@@ -151,7 +152,7 @@ update_status ModulePlayer::Update(float dt)
 	vehicle->Render();
 
 	char title[80];
-	sprintf_s(title, "%.1f Km/h", vehicle->GetKmh());
+	sprintf_s(title, "%.1f Km/h     %i, LAP %i", vehicle->GetKmh(), (App->scene_intro->lap_timer.Read())/1000,App->scene_intro->laps);
 	App->window->SetTitle(title);
 
 	vehicle->GetTransform(&matrix);
