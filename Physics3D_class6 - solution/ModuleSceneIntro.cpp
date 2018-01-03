@@ -107,7 +107,7 @@ bool ModuleSceneIntro::Start()
 	s27.color = Purple;
 	s27.SetRotation(-23, vec3(0, 1, 0));
 	s28.size = vec3(1, 2, 10);
-	s2.color = Purple;
+	s28.color = Purple;
 	s28.SetRotation(-32, vec3(0, 1, 0));
 	s29.size = vec3(9, 2, 20);
 	s29.color = Green;
