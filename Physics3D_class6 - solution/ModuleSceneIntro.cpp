@@ -34,7 +34,7 @@ bool ModuleSceneIntro::Start()
 
 
 	s.size = vec3(10, 1, 150);//1
-	s.color = Blue;
+	s.color = Green;
 	s1.size = vec3(1, 2, 150);//pdreta
 	s1.color = Purple;
 	s2.size = vec3(1, 2, 150);//paretesquerra
@@ -47,7 +47,7 @@ bool ModuleSceneIntro::Start()
 	s4.SetRotation(30, vec3(0, 1, 0));
 	s5.size = vec3(9, 2, 25);//2
 	s5.SetRotation(35, vec3(0, 1, 0));
-	s5.color = Blue;
+	s5.color = Green;
 	s6.size = vec3(1, 2, 30);//pdereta3
 	s6.color = Purple;
 	s6.SetRotation(52, vec3(0, 1, 0));
@@ -55,10 +55,10 @@ bool ModuleSceneIntro::Start()
 	s7.color = Purple;
 	s7.SetRotation(56, vec3(0, 1, 0));
 	s8.size = vec3(10, 2, 25);//3
-	s8.color = Blue;
+	s8.color = Green;
 	s8.SetRotation(55, vec3(0, 1, 0));
 	s9.size = vec3(11, 2, 70);//4
-	s9.color = Blue;
+	s9.color = Green;
 	s9.SetRotation(270, vec3(0, 1, 0));
 	s10.size = vec3(1, 2, 70);//paretderta4
 	s10.color = Purple;
@@ -67,120 +67,187 @@ bool ModuleSceneIntro::Start()
 	s11.color = Purple;
 	s11.SetRotation(270, vec3(0, 1, 0));
 	s12.size = vec3(11, 2, 60);
+	s12.color = Green;
 	s13.size = vec3(1, 2, 10);
+	s13.color = Purple;
 	s13.SetRotation(270, vec3(0, 1, 0));
 	s14.size = vec3(1, 2, 58);
+	s14.color = Purple;
 	s15.size = vec3(1, 2, 60);
+	s15.color = Purple;
 	s16.size = vec3(9, 2, 30);
+	s16.color = Green;
 	s16.SetRotation(90, vec3(0, 1, 0));
 	s17.size = vec3(2.5f, 2, 20);
+	s17.color = Purple;
 	s17.SetRotation(90, vec3(0, 1, 0));
 	s18.size = vec3(1, 2, 80);
+	s18.color = Purple;
 	s18.SetRotation(90, vec3(0, 1, 0));
 	s19.size = vec3(9, 2, 50);
+	s19.color = Green;
 	s19.SetRotation(90, vec3(0, 1, 0));
 	s20.size = vec3(9, 2, 80);
+	s20.color = Green;
 	s21.size = vec3(2.5f, 2, 40);
+	s21.color = Purple;
 	s21.SetRotation(90, vec3(0, 1, 0));
 	s22.size = vec3(1, 2, 80);
+	s22.color = Purple;
 	s23.size = vec3(1, 2, 70);
+	s23.color = Purple;
 	s24.size = vec3(1, 2, 10);
+	s24.color = Purple;
 	s25.size = vec3(1, 2, 10);
+	s25.color = Purple;
 	s26.size = vec3(9, 2, 15);
+	s26.color = Green;
 	s26.SetRotation(-30, vec3(0, 1, 0));
 	s27.size = vec3(1, 2, 10);
+	s27.color = Purple;
 	s27.SetRotation(-23, vec3(0, 1, 0));
 	s28.size = vec3(1, 2, 10);
+	s2.color = Purple;
 	s28.SetRotation(-32, vec3(0, 1, 0));
 	s29.size = vec3(9, 2, 20);
+	s29.color = Green;
 	s29.SetRotation(-60, vec3(0, 1, 0));
 	s30.size = vec3(1, 2, 5);
 	s30.SetRotation(-34, vec3(0, 1, 0));
 	s31.size = vec3(1, 2, 20);
+	s31.color = Purple;
 	s31.SetRotation(-60, vec3(0, 1, 0));
 	s32.size = vec3(1, 2, 20);
+	s32.color = Purple;
 	s32.SetRotation(-55, vec3(0, 1, 0));
 	s33.size = vec3(20, 2, 300);
+	s33.color = Green;
 	s33.SetRotation(-90, vec3(0, 1, 0));
 	s34.size = vec3(8, 2, 15);
+	s34.color = Green;
 	s34.SetRotation(-90, vec3(0, 1, 0));
 	s35.size = vec3(20, 2, 10);
+	s35.color = Green;
 	s35.SetRotation(30, vec3(0, 1, 0));
 	s36.size = vec3(10, 2, 10);
+	s36.color = Green;
 	s36.SetRotation(-13, vec3(0, 1, 0));
 	s37.size = vec3(1, 2, 20);
+	s37.color = Purple;
 	s37.SetRotation(-70, vec3(0, 1, 0));
 	s38.size = vec3(3, 2, 7);
+	s38.color = Green;
 	s38.SetRotation(-70, vec3(0, 1, 0));
 	s39.size = vec3(1, 2, 17);
+	s39.color = Purple;
 	s39.SetRotation(-100, vec3(0, 1, 0));
 	s40.size = vec3(1, 2, 9);
+	s40.color = Purple;
 	s40.SetRotation(-70, vec3(0, 1, 0));
 	s41.size = vec3(1, 2, 300);
+	s41.color = Purple;
 	s41.SetRotation(-90, vec3(0, 1, 0));
 	s42.size = vec3(1, 2, 300);
+	s42.color = Purple;
 	s42.SetRotation(-90, vec3(0, 1, 0));
 	s43.size = vec3(13, 2, 13);
+	s43.color = Green;
 	s43.SetRotation(-130, vec3(0, 1, 0));
 	s44.size = vec3(13, 2, 15);
+	s44.color = Green;
 	s44.SetRotation(125, vec3(0, 1, 0));
 	s45.size = vec3 ( 1, 2, 19);
+	s45.color = Purple;
 	s45.SetRotation(-135, vec3(0, 1, 0));
 	s46.size = vec3(1, 2, 6);
+	s46.color = Purple;
 	s46.SetRotation(-135, vec3(0, 1, 0));
 	s47.size = vec3(13, 2, 15);
+	s47.color = Green;
 	s47.SetRotation(-170, vec3(0, 1, 0));
 	s48.size = vec3(1, 2, 15);
+	s48.color = Purple;
 	s48.SetRotation(-170, vec3(0, 1, 0));
 	s49.size = vec3(1, 2, 7);
+	s49.color = Purple;
 	s49.SetRotation(-170, vec3(0, 1, 0));
 	s50.size = vec3(13, 2, 30);
+	s50.color = Green;
 	s51.size = vec3(10, 2, 50);
+	s51.color = Green;
 	s51.SetRotation(90, vec3(0, 1, 0));
 	s52.size = vec3(1, 2, 41);
+	s52.color = Purple;
 	s53.size = vec3(1, 2, 28);
+	s53.color = Purple;
 	s54.size = vec3(1, 2, 50);
+	s54.color = Purple;
 	s54.SetRotation(90, vec3(0, 1, 0));
 	s55.size = vec3(1, 2, 40);
+	s55.color = Purple;
 	s55.SetRotation(90, vec3(0, 1, 0));
 	s56.size = vec3(10, 2, 60);
+	s56.color = Green;
 	s57.size = vec3(1, 2, 60);
+	s57.color = Purple;
 	s58.size = vec3(1, 2, 50);
+	s58.color = Purple;
 	s59.size = vec3(1, 2, 10);
+	s59.color = Purple;
 	s59.SetRotation(90, vec3(0, 1, 0));
 	s60.size = vec3(10, 2, 30);
+	s60.color = Green;
 	s60.SetRotation(90, vec3(0, 1, 0));
 	s61.size = vec3(1, 2, 10);
+	s61.color = Purple;
 	s62.size = vec3(1, 2, 20);
+	s62.color = Purple;
 	s62.SetRotation(90, vec3(0, 1, 0));
 	s63.size = vec3(1, 2, 30);
+	s63.color = Purple;
 	s63.SetRotation(90, vec3(0, 1, 0));
 	s64.size = vec3(10, 2, 60);
+	s64.color = Green;
 	s65.size = vec3(10, 2, 30);
+	s65.color = Green;
 	s65.SetRotation(90, vec3(0, 1, 0));
 	s66.size = vec3(10, 2, 60);
+	s66.color = Green;
 	s67.size = vec3(10, 2, 30);
+	s67.color = Green;
 	s67.SetRotation(90, vec3(0, 1, 0));
 	s68.size = vec3(10, 2, 60);
+	s68.color = Green;
 	s69.size = vec3(10, 2, 170);
+	s69.color = Green;
 	s69.SetRotation(90, vec3(0, 1, 0));
 	s70.size = vec3(1, 2, 170);
+	s70.color = Purple;
 	s70.SetRotation(90, vec3(0, 1, 0));
 	s71.size = vec3(1, 2, 140);
+	s71.color = Purple;
 	s71.SetRotation(90, vec3(0, 1, 0));
 	s72.size = vec3(10, 2, 20);
+	s72.color = Green;
 	/*s72.SetRotation(90, vec3(0, 1, 0));*/
 	s72.SetRotation(10, vec3(1, 0, 0));
 	s73.size = vec3(10, 2, 20);
+	s73.color = Green;
 	/*s73.SetRotation(90, vec3(0, 1, 0));*/
 	s73.SetRotation(10, vec3(1, 0, 0));
 	s74.size = vec3(10, 1, 50);
+	s74.color = Green;
 	s75.size = vec3(1, 2, 50);
+	s75.color = Purple;
 	s76.size = vec3(1, 2, 30);
+	s76.color = Purple;
 	s77.size = vec3(1, 2, 140);
+	s77.color = Purple;
 	s77.SetRotation(90, vec3(0, 1, 0));
 	s78.size = vec3(1, 2, 10);
+	s78.color = Purple;
 	s79.size = vec3(1, 2, 140);
+	s79.color = Purple;
 	s79.SetRotation(90, vec3(0, 1, 0));
 
 	s.SetPos(0, 2.5f, 20);//terro
@@ -200,6 +267,7 @@ bool ModuleSceneIntro::Start()
 	s14.SetPos(108.3f, 3.5f, 102.6f);
 	s15.SetPos(96.7f, 3.5f, 91.2f);
 	s16.SetPos(112, 2, 66.5f);
+	//check point 1
 	s17.SetPos(117.8f, 3.5f, 72.2f);
 	s18.SetPos(136, 3.5f, 61.7f);
 	s19.SetPos(152, 2, 66.5f);
@@ -213,6 +281,7 @@ bool ModuleSceneIntro::Start()
 	s27.SetPos(174.6f, 3.5f, 154.2f);
 	s28.SetPos(165.7f, 3.5f, 154);
 	s29.SetPos(158.4f, 2, 166.1f);
+	//check point 2
 	s30.SetPos(171.5f, 3.5f, 160.5f);
 	s31.SetPos(154.6f, 3.5f, 163);
 	s32.SetPos(162.1f, 3.5f, 168.3f);
@@ -241,6 +310,7 @@ bool ModuleSceneIntro::Start()
 	s55.SetPos(-155.7f, 3.5f, 126.4f);
 	s59.SetPos(-132.2f, 3.5f, 126.4f);//parxe
 	s56.SetPos(-132.7f, 2, 96);
+	//check point 3
 	s57.SetPos(-127.7f, 3.5f, 96.4f);
 	s58.SetPos(-137, 3.5f, 91.5f);
 	s60.SetPos(-142.7f, 2, 61);
@@ -253,6 +323,7 @@ bool ModuleSceneIntro::Start()
 	s67.SetPos(-142.7f, 2, -39);
 	s68.SetPos(-162.7f, 2, -64);
 	s69.SetPos(-82.7f, 2, -99);
+//check point 4
 	s70.SetPos(-82.7f, 3.5, -104);
 	s71.SetPos(-87.7f, 3.5, -94);
 	s72.SetPos(-122.8f, 0.30f, 25.8f);
