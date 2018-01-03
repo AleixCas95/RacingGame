@@ -21,6 +21,7 @@ public:
 
 public:
 
+	int minutes = 0;
 	
 
 	PhysVehicle3D* vehicle;

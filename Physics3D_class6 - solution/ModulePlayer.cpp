@@ -99,8 +99,6 @@ bool ModulePlayer::Start()
 
 	vehicle = App->physics->AddVehicle(car);
 	vehicle->SetPos(0, 3.5f, -50);
-	
-		//(0, 3.5f, -50);
 	App->camera->Follow(vehicle, 10, 10, 1.f);
 
 	return true;
@@ -119,6 +117,7 @@ update_status ModulePlayer::Update(float dt)
 {
 	turn = acceleration = brake = 0.0f;
 
+	//move
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
 		acceleration = MAX_ACCELERATION;
@@ -144,7 +143,31 @@ update_status ModulePlayer::Update(float dt)
 	{
 		acceleration = -MAX_ACCELERATION;
 	}
-	
+
+	//Respawn
+	if (App->input->GetKey(SDL_SCANCODE_R)) 
+	{
+		brake = BRAKE_POWER;
+		switch (App->scene_intro->checkpoint) 
+		{
+		case 0:
+			vehicle->SetPos(0, 2, -20);
+			break;
+		case 1:
+			vehicle->SetPos(130, 2, 66.5f);
+			break;
+		case 2:
+			vehicle->SetPos(158.4f, 2, 166.1f);
+			break;
+		case 3:
+			vehicle->SetPos(-132.7f, 2, 96);
+			break;
+		case 4:
+			vehicle->SetPos(-82.7f, 2, -99);
+			break;
+		}
+	}
+
 	vehicle->ApplyEngineForce(acceleration);
 	vehicle->Turn(turn);
 	vehicle->Brake(brake);
@@ -152,7 +175,18 @@ update_status ModulePlayer::Update(float dt)
 	vehicle->Render();
 
 	char title[80];
-	sprintf_s(title, "%.1f Km/h     %i, LAP %i", vehicle->GetKmh(), (App->scene_intro->lap_timer.Read())/1000,App->scene_intro->laps);
+
+	if ((App->scene_intro->lap_timer.Read()) / 1000 < 60) 
+	{
+		sprintf_s(title, "%.1f Km/h  LAP TIME: %i : %i, LAP %i", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps);
+	}
+	else if ((App->scene_intro->lap_timer.Read()) / 1000 >= 60)
+	{
+		App->scene_intro->lap_timer.Start();
+		minutes = minutes + 1;
+		sprintf_s(title, "%.1f Km/h  LAP TIME: %i : %i, LAP %i", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps);
+	}
+
 	App->window->SetTitle(title);
 
 	vehicle->GetTransform(&matrix);

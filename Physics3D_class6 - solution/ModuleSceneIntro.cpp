@@ -29,8 +29,32 @@ bool ModuleSceneIntro::Start()
 	sensormeta1->collision_listeners.add(this);
 
 	//checkpoint1
-	checkpoint1.size = vec3(15, 15, 1);
-	//checkpoint1.SetPos();
+	checkpoint1.size = vec3(1, 15, 15);
+	checkpoint1.SetPos(130, 2, 66.5f);
+	sensorcheckpoint1 = App->physics->AddBody(checkpoint1, 0.0f);
+	sensorcheckpoint1->SetAsSensor(true);
+	sensorcheckpoint1->collision_listeners.add(this);
+
+	//checkpoint2
+	checkpoint2.size = vec3(1, 15, 15);
+	checkpoint2.SetPos(158.4f, 2, 166.1f);
+	sensorcheckpoint2 = App->physics->AddBody(checkpoint2, 0.0f);
+	sensorcheckpoint2->SetAsSensor(true);
+	sensorcheckpoint2->collision_listeners.add(this); 
+
+	//checkpoint3
+	checkpoint3.size = vec3(15, 15, 1);
+	checkpoint3.SetPos(-132.7f, 2, 96);
+	sensorcheckpoint3 = App->physics->AddBody(checkpoint3, 0.0f);
+	sensorcheckpoint3->SetAsSensor(true);
+	sensorcheckpoint3->collision_listeners.add(this);
+
+	//checkpoint4
+	checkpoint4.size = vec3(1, 15, 15);
+	checkpoint4.SetPos(-82.7f, 2, -99);
+	sensorcheckpoint4 = App->physics->AddBody(checkpoint4, 0.0f);
+	sensorcheckpoint4->SetAsSensor(true);
+	sensorcheckpoint4->collision_listeners.add(this);
 
 
 	s.size = vec3(10, 1, 150);//1
@@ -688,9 +712,14 @@ update_status ModuleSceneIntro::Update(float dt)
 	sensor->GetTransform(&s7.transform);
 	sensor->GetTransform(&s8.transform);*/
 
+	//checkpoints y meta
 	sensormeta.Render();
+	checkpoint1.Render();
+	checkpoint2.Render();
+	checkpoint3.Render();
+	checkpoint4.Render();
 
-
+	//circuito
 	s.Render();
 	s1.Render();
 	s2.Render();
@@ -779,10 +808,33 @@ update_status ModuleSceneIntro::Update(float dt)
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
-	if (body1 == sensormeta1)
+	if ((body1 == sensormeta1) && (collision == false))
 	{
 		App->scene_intro->lap_timer.Start();
-		
+		checkpoint = 0;
+		laps = laps + 1;
+		collision = true;
+	}
+
+	if (body1 == sensorcheckpoint1) 
+	{
+		checkpoint = 1;
+		collision = false;
+	}
+
+	if(body1 == sensorcheckpoint2) 
+	{
+		checkpoint = 2;
+	}
+
+	if (body1 == sensorcheckpoint3)
+	{
+		checkpoint = 3;
+	}
+
+	if (body1 == sensorcheckpoint4) 
+	{
+		checkpoint = 4;
 	}
 
 	LOG("Hit!");
