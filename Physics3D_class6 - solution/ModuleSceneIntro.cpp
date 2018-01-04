@@ -830,9 +830,9 @@ bool ModuleSceneIntro::Start()
 	sensor98->SetAsSensor(false);
 	sensor98->collision_listeners.add(this);
 
-	sensor39 = App->physics->AddBody(s39, 0.0f);
-	sensor39->SetAsSensor(false);
-	sensor39->collision_listeners.add(this);
+	sensor99 = App->physics->AddBody(s99, 0.0f);
+	sensor99->SetAsSensor(false);
+	sensor99->collision_listeners.add(this);
 
 	return ret;
 }
