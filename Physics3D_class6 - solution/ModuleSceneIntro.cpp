@@ -273,6 +273,18 @@ bool ModuleSceneIntro::Start()
 	s79.size = vec3(1, 2, 140);
 	s79.color = Purple;
 	s79.SetRotation(90, vec3(0, 1, 0));
+	s80.size = vec3(50, 2, 400);
+	s80.color = Brown;
+	s81.size = vec3(50, 2, 400);
+	s81.color = Brown;
+	s81.SetRotation(90, vec3(0, 1, 0));
+	s82.size = vec3(50, 2, 400);
+	s82.color = Brown;
+	s82.SetRotation(90, vec3(0, 1, 0));
+	s83.size = vec3(50, 2, 400);
+	s83.color = Brown;
+	s84.size = vec3(350, 2, 350);
+	s84.color = Lightblue;
 
 	s.SetPos(0, 2.5f, 20);//terro
 	s1.SetPos(-5, 3.5f, 20);
@@ -358,7 +370,12 @@ bool ModuleSceneIntro::Start()
 	s77.SetPos(-64.3f, 3.5f, -104);
 	s78.SetPos(-5, 3.5f, -89);
 	s79.SetPos(-74.5f, 3.5, -94);
-
+	s80.SetPos(200, 0, 0);
+	s81.SetPos(0, 0, 200);
+	s82.SetPos(0, 0, -200);
+	s83.SetPos(-200, 0, 0);
+	s84.SetPos(0, 0, 0)
+		;
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(false);
 	sensor->collision_listeners.add(this);
@@ -682,6 +699,26 @@ bool ModuleSceneIntro::Start()
 	sensor79->SetAsSensor(false);
 	sensor79->collision_listeners.add(this);
 
+
+	sensor80 = App->physics->AddBody(s60, 0.0f);
+	sensor80->SetAsSensor(false);
+	sensor80->collision_listeners.add(this);
+
+	sensor81 = App->physics->AddBody(s61, 0.0f);
+	sensor81->SetAsSensor(false);
+	sensor81->collision_listeners.add(this);
+
+	sensor82 = App->physics->AddBody(s62, 0.0f);
+	sensor82->SetAsSensor(false);
+	sensor82->collision_listeners.add(this);
+
+	sensor83 = App->physics->AddBody(s63, 0.0f);
+	sensor83->SetAsSensor(false);
+	sensor83->collision_listeners.add(this);
+
+	sensor84 = App->physics->AddBody(s64, 0.0f);
+	sensor84->SetAsSensor(false);
+	sensor84->collision_listeners.add(this);
 	
 
 	return ret;
@@ -800,7 +837,11 @@ update_status ModuleSceneIntro::Update(float dt)
 	s77.Render();
 	s78.Render();
 	s79.Render();
-	
+	s80.Render();
+	s81.Render();
+	s82.Render();
+	s83.Render();
+	s84.Render();
 
 
 	return UPDATE_CONTINUE;

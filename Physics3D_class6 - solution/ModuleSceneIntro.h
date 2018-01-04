@@ -27,6 +27,8 @@ public:
 	Cube s43, s44, s45, s46, s47, s48, s49, s50, s51, s52, s53, s54, s55, s56, s57, s58, s59, s60, s61, s62;
 	Cube s63, s64, s65, s66, s67, s68, s69, s70, s71, s72, s73, s74, s75, s76, s77, s78, s79;
 
+	Cube s80, s81, s82, s83, s84;
+
 	//checkpoints cube
 	Cube sensormeta, checkpoint1, checkpoint2, checkpoint3, checkpoint4;
 
@@ -36,7 +38,8 @@ public:
 	PhysBody3D* sensor43, *sensor44, *sensor45, *sensor46, *sensor47, *sensor48, *sensor49, *sensor50, *sensor51, *sensor52, *sensor53, *sensor54, *sensor55, *sensor56;
 	PhysBody3D *sensor57, *sensor58, *sensor59, *sensor60, *sensor61, *sensor62, *sensor63, *sensor64, *sensor65, *sensor66, *sensor67, *sensor68, *sensor69;
 	PhysBody3D *sensor70, *sensor71, *sensor72, *sensor73, *sensor74, *sensor75, *sensor76, *sensor77, *sensor78, *sensor79;
-	
+	PhysBody3D *sensor80, *sensor81, *sensor82, *sensor83, *sensor84;
+
 	//checkpoints sensors
 	PhysBody3D *sensormeta1, *sensorcheckpoint1,*sensorcheckpoint2,*sensorcheckpoint3, *sensorcheckpoint4;
 
