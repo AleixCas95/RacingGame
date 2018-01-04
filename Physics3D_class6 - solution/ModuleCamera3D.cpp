@@ -13,7 +13,7 @@ ModuleCamera3D::ModuleCamera3D(Application* app, bool start_enabled) : Module(ap
 	Y = vec3(0.0f, 1.0f, 0.0f);
 	Z = vec3(0.0f, 0.0f, 1.0f);
 
-	Position = vec3(-1.0f, 7.5f, -5.0f);
+	Position = vec3(-1.0f, 7.5f, -80.0f);
 	Reference = vec3(0.0f, 0.0f, 0.0f);
 }
 
@@ -50,7 +50,7 @@ update_status ModuleCamera3D::Update(float dt)
 
 	// Correct height
 	if (m.translation().y < 2.5)
-		Position.y = 4;
+		Position.y = 8;
 	else if (m.translation().y > 2.5 && (m.translation().y < 9.5))
 		Position.y = 7.2;
 	else if (m.translation().y > 2.5 && (m.translation().y < 14.5))
