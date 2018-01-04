@@ -137,6 +137,7 @@ bool ModuleSceneIntro::Start()
 	s29.color = Green;
 	s29.SetRotation(-60, vec3(0, 1, 0));
 	s30.size = vec3(1, 2, 5);
+	s30.color = Purple;
 	s30.SetRotation(-34, vec3(0, 1, 0));
 	s31.size = vec3(1, 2, 20);
 	s31.color = Purple;
@@ -285,6 +286,39 @@ bool ModuleSceneIntro::Start()
 	s83.color = Brown;
 	s84.size = vec3(350, 2, 350);
 	s84.color = Lightblue;
+	//spheres
+	s85.radius = 3;
+	s85.color = Red;
+	s86.radius = 3;
+	s86.color = Red;
+	s87.radius = 3;
+	s87.color = Red;
+	s88.radius = 3;
+	s88.color = Red;
+	s89.radius = 3;
+	s89.color = Red;
+	//pareds recta
+	s90.size = vec3(1, 3, 5);
+	s90.color = Brown;
+	s91.size = vec3(1, 3, 5);
+	s91.color = Brown;
+	s92.size = vec3(1, 3, 5);
+	s92.color = Brown;
+	s93.size = vec3(1, 3, 5);
+	s93.color = Brown;
+	s94.size = vec3(1, 3, 5);
+	s94.color = Brown;
+	s95.size = vec3(1, 3, 5);
+	s95.color = Brown;
+	s96.size = vec3(1, 3, 5);
+	s96.color = Brown;
+	s97.size = vec3(1, 3, 5);
+	s97.color = Brown;
+	s98.size = vec3(1, 3, 5);
+	s98.color = Brown;
+	s99.size = vec3(1, 3, 5);
+	s99.color = Brown;
+
 
 	s.SetPos(0, 2.5f, 20);//terro
 	s1.SetPos(-5, 3.5f, 20);
@@ -374,8 +408,27 @@ bool ModuleSceneIntro::Start()
 	s81.SetPos(0, 0, 200);
 	s82.SetPos(0, 0, -200);
 	s83.SetPos(-200, 0, 0);
-	s84.SetPos(0, 0, 0)
-		;
+	s84.SetPos(0, 0, 0);
+	s85.SetPos(-20, 2, 173);
+	s86.SetPos(50, 2, 173);
+	s87.SetPos(-70, 2, 173);
+	s88.SetPos(-100, 2, 173);
+	s89.SetPos(90, 2, 173);
+	s90.SetPos(-35, 4.5f, 179);
+	s91.SetPos(45, 4.5f, 179);
+	s92.SetPos(-60, 4.5f, 179);
+	s93.SetPos(-125, 4.5f, 179);
+	s94.SetPos(80, 4.5f, 179);
+	s95.SetPos(-35, 4.5f, 168.5f);
+	s96.SetPos(45, 4.5f, 168.5f);
+	s97.SetPos(-110, 4.5f, 168.5f);
+	s98.SetPos(-125, 4.5f, 168.5f);
+	s99.SetPos(80, 4.5f, 168.5f);
+
+
+
+
+
 	sensor = App->physics->AddBody(s, 0.0f);
 	sensor->SetAsSensor(false);
 	sensor->collision_listeners.add(this);
@@ -700,26 +753,86 @@ bool ModuleSceneIntro::Start()
 	sensor79->collision_listeners.add(this);
 
 
-	sensor80 = App->physics->AddBody(s60, 0.0f);
+	sensor80 = App->physics->AddBody(s70, 0.0f);
 	sensor80->SetAsSensor(false);
 	sensor80->collision_listeners.add(this);
 
-	sensor81 = App->physics->AddBody(s61, 0.0f);
+	sensor81 = App->physics->AddBody(s81, 0.0f);
 	sensor81->SetAsSensor(false);
 	sensor81->collision_listeners.add(this);
 
-	sensor82 = App->physics->AddBody(s62, 0.0f);
+	sensor82 = App->physics->AddBody(s82, 0.0f);
 	sensor82->SetAsSensor(false);
 	sensor82->collision_listeners.add(this);
 
-	sensor83 = App->physics->AddBody(s63, 0.0f);
+	sensor83 = App->physics->AddBody(s83, 0.0f);
 	sensor83->SetAsSensor(false);
 	sensor83->collision_listeners.add(this);
 
-	sensor84 = App->physics->AddBody(s64, 0.0f);
-	sensor84->SetAsSensor(false);
-	sensor84->collision_listeners.add(this);
-	
+	//sensor84 = App->physics->AddBody(s84, 0.0f);
+	//sensor84->SetAsSensor(false);
+	//sensor84->collision_listeners.add(this);
+	//aigua
+
+	sensor85 = App->physics->AddBody(s85, 0.0f);
+	sensor85->SetAsSensor(false);
+	sensor85->collision_listeners.add(this);
+
+	sensor86 = App->physics->AddBody(s86, 0.0f);
+	sensor86->SetAsSensor(false);
+	sensor86->collision_listeners.add(this);
+
+	sensor87 = App->physics->AddBody(s87, 0.0f);
+	sensor87->SetAsSensor(false);
+	sensor87->collision_listeners.add(this);
+
+	sensor88 = App->physics->AddBody(s88, 0.0f);
+	sensor88->SetAsSensor(false);
+	sensor88->collision_listeners.add(this);
+
+	sensor89 = App->physics->AddBody(s89, 0.0f);
+	sensor89->SetAsSensor(false);
+	sensor89->collision_listeners.add(this);
+
+	sensor90 = App->physics->AddBody(s90, 0.0f);
+	sensor90->SetAsSensor(false);
+	sensor90->collision_listeners.add(this);
+
+	sensor91 = App->physics->AddBody(s91, 0.0f);
+	sensor91->SetAsSensor(false);
+	sensor91->collision_listeners.add(this);
+
+	sensor92 = App->physics->AddBody(s92, 0.0f);
+	sensor92->SetAsSensor(false);
+	sensor92->collision_listeners.add(this);
+
+	sensor93 = App->physics->AddBody(s93, 0.0f);
+	sensor93->SetAsSensor(false);
+	sensor93->collision_listeners.add(this);
+
+	sensor94 = App->physics->AddBody(s94, 0.0f);
+	sensor94->SetAsSensor(false);
+	sensor94->collision_listeners.add(this);
+
+	sensor95 = App->physics->AddBody(s95, 0.0f);
+	sensor95->SetAsSensor(false);
+	sensor95->collision_listeners.add(this);
+
+	sensor96 = App->physics->AddBody(s96, 0.0f);
+	sensor96->SetAsSensor(false);
+	sensor96->collision_listeners.add(this);
+
+	sensor97 = App->physics->AddBody(s97, 0.0f);
+	sensor97->SetAsSensor(false);
+	sensor97->collision_listeners.add(this);
+
+	sensor98 = App->physics->AddBody(s98, 0.0f);
+	sensor98->SetAsSensor(false);
+	sensor98->collision_listeners.add(this);
+
+	sensor39 = App->physics->AddBody(s39, 0.0f);
+	sensor39->SetAsSensor(false);
+	sensor39->collision_listeners.add(this);
 
 	return ret;
 }
@@ -842,7 +955,21 @@ update_status ModuleSceneIntro::Update(float dt)
 	s82.Render();
 	s83.Render();
 	s84.Render();
-
+	s85.Render();
+	s86.Render();
+	s87.Render();
+	s88.Render();
+	s89.Render();
+	s90.Render();
+	s91.Render();
+	s92.Render();
+	s93.Render();
+	s94.Render();
+	s95.Render();
+	s96.Render();
+	s97.Render();
+	s98.Render();
+	s99.Render();
 
 	return UPDATE_CONTINUE;
 }
