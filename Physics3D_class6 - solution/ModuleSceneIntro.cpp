@@ -978,11 +978,20 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
 	if ((body1 == sensormeta1) && (collision == false))
 	{
+		App->player->timelap[laps] = (App->scene_intro->lap_timer.Read() / 1000) + (App->player->minutes * 60);
+		if (laps <= 1)fastlap = App->player->timelap[laps];
+		else if ((laps > 1) && (fastlap>(App->player->timelap[laps])))
+		{
+			fastlap = App->player->timelap[laps];
+		}
+		App->player->minutes = 0;
 		App->scene_intro->lap_timer.Start();
 		checkpoint = 0;
 		laps = laps + 1;
 		collision = true;
 	}
+
+
 
 	if (body1 == sensorcheckpoint1) 
 	{

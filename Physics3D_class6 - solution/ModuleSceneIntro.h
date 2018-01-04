@@ -50,7 +50,7 @@ public:
 	Timer lap_timer;
 
 	int laps = 0;
-
+	int fastlap;
 	int checkpoint = 0;
 
 	

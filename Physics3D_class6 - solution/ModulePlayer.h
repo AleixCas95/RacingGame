@@ -22,7 +22,10 @@ public:
 public:
 
 	int minutes = 0;
-	
+	int timelap[50];
+	int fastlapminutes = 0;
+	int fastlapseconds = 0;
+
 
 	PhysVehicle3D* vehicle;
 	float turn;

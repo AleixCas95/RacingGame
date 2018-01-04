@@ -117,38 +117,48 @@ update_status ModulePlayer::Update(float dt)
 {
 	turn = acceleration = brake = 0.0f;
 
+	if (App->scene_intro->fastlap < 60)
+	{
+		fastlapseconds = App->scene_intro->fastlap;
+	}
+	else
+	{
+		fastlapminutes = App->scene_intro->fastlap / 60;
+		fastlapseconds = App->scene_intro->fastlap % 60;
+	}
+
 	//move
-	if((App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)&&(vehicle->GetKmh()<90))
+	if ((App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT) && (vehicle->GetKmh()<90))
 	{
 		acceleration = MAX_ACCELERATION;
 	}
 
-	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
+	if (App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
 	{
-		if(turn < TURN_DEGREES)
-			turn +=  TURN_DEGREES;
+		if (turn < TURN_DEGREES)
+			turn += TURN_DEGREES;
 	}
 
-	if(App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
+	if (App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 	{
-		if(turn > -TURN_DEGREES)
+		if (turn > -TURN_DEGREES)
 			turn -= TURN_DEGREES;
 	}
 
-	if((App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)&&((vehicle->GetKmh())>0))
+	if ((App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT) && ((vehicle->GetKmh())>0))
 	{
 		brake = BRAKE_POWER;
 	}
-	else if ((App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT) && ((vehicle->GetKmh()) <= 0)) 
+	else if ((App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT) && ((vehicle->GetKmh()) <= 0))
 	{
 		acceleration = -MAX_ACCELERATION;
 	}
 
 	//Respawn
-	if (App->input->GetKey(SDL_SCANCODE_R)) 
+	if (App->input->GetKey(SDL_SCANCODE_R))
 	{
 		brake = BRAKE_POWER;
-		switch (App->scene_intro->checkpoint) 
+		switch (App->scene_intro->checkpoint)
 		{
 		case 0:
 			vehicle->SetPos(0, 2, -20);
@@ -175,16 +185,50 @@ update_status ModulePlayer::Update(float dt)
 	vehicle->Render();
 
 	char title[80];
-
-	if ((App->scene_intro->lap_timer.Read()) / 1000 < 60) 
-	{
-		sprintf_s(title, "%.1f Km/h  LAP TIME: %i : %i, LAP %i", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps);
+	if (App->scene_intro->laps <= 1) {
+		if (((App->scene_intro->lap_timer.Read()) / 1000 >= 60))
+		{
+			App->scene_intro->lap_timer.Start();
+			minutes = minutes + 1;
+			sprintf_s(title, "%.1f Km/h\t    LAP TIME: 0%i : %i\t    LAP: %i\t     FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, minutes, (App->scene_intro->lap_timer.Read()) / 1000);
+		}
+		else if (((App->scene_intro->lap_timer.Read()) / 1000 >= 60) && (minutes >= 10))
+		{
+			App->scene_intro->lap_timer.Start();
+			minutes = minutes + 1;
+			sprintf_s(title, "%.1f Km/h \t    LAP TIME: %i : %i\t     LAP: %i\t      FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, minutes, (App->scene_intro->lap_timer.Read()) / 1000);
+		}
+		else if ((App->scene_intro->lap_timer.Read() / 1000 < 10) && (minutes < 10))
+		{
+			sprintf_s(title, "%.1f Km/h \t     LAP TIME: 0%i : 0%i\t     LAP: %i\t      FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, minutes, (App->scene_intro->lap_timer.Read()) / 1000);
+		}
+		else if ((App->scene_intro->lap_timer.Read() / 1000 >= 10) && (minutes < 10))
+		{
+			sprintf_s(title, "%.1f Km/h \t      LAP TIME: 0%i : %i\t     LAP: %i\t      FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, minutes, (App->scene_intro->lap_timer.Read()) / 1000);
+		}
 	}
-	else if ((App->scene_intro->lap_timer.Read()) / 1000 >= 60)
-	{
-		App->scene_intro->lap_timer.Start();
-		minutes = minutes + 1;
-		sprintf_s(title, "%.1f Km/h  LAP TIME: %i : %i, LAP %i", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps);
+	else
+ {
+		if (((App->scene_intro->lap_timer.Read()) / 1000 >= 60))
+		{
+			App->scene_intro->lap_timer.Start();
+			minutes = minutes + 1;
+			sprintf_s(title, "%.1f Km/h\t    LAP TIME: 0%i : %i\t     LAP: %i\t     FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, fastlapminutes, fastlapseconds);
+		}
+		else if (((App->scene_intro->lap_timer.Read()) / 1000 >= 60) && (minutes >= 10))
+		{
+			App->scene_intro->lap_timer.Start();
+			minutes = minutes + 1;
+			sprintf_s(title, "%.1f Km/h\t    LAP TIME: %i : %i\t     LAP: %i\t      FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, fastlapminutes, fastlapseconds);
+		}
+		else if ((App->scene_intro->lap_timer.Read() / 1000 < 10) && (minutes < 10))
+		{
+			sprintf_s(title, "%.1f Km/h\t    LAP TIME: 0%i : 0%i\t     LAP: %i\t      FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, fastlapminutes, fastlapseconds);
+		}
+		else if ((App->scene_intro->lap_timer.Read() / 1000 >= 10) && (minutes < 10))
+		{
+			sprintf_s(title, "%.1f Km/h\t    LAP TIME: 0%i : %i\t      LAP: %i\t      FASTLAP: %i min %i sec", vehicle->GetKmh(), minutes, (App->scene_intro->lap_timer.Read()) / 1000, App->scene_intro->laps, fastlapminutes, fastlapseconds);
+		}
 	}
 
 	App->window->SetTitle(title);
@@ -199,6 +243,3 @@ update_status ModulePlayer::Update(float dt)
 
 	return UPDATE_CONTINUE;
 }
-
-
-
