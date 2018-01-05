@@ -34,6 +34,9 @@ In this racing game you have:
 ## Tools used
 
 IDE: Microsoft Visual Studio 2017
+
 Language: C++
+
 Physics: Bullet
+
 Code repository: GitHub
