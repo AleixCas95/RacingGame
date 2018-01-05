@@ -4,7 +4,7 @@
 ## Description of the game
 
 This is the second project for Physics II subject.
-The main goal here is to create a race car game that has:
+The main goal here is to create a racing car game.
 
 ## Members
 Aleix Castillo Arrià (AleixCas95),
