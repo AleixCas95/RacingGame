@@ -23,8 +23,6 @@ bool ModulePlayer::Start()
 
 	//sounds
 	spawn_fx = App->audio->LoadFx("RacingGame/spawn_fx.wav");
-	
-	
 	App->audio->PlayMusic("RacingGame/musicrace.oga",0);
 
 	// Car properties ----------------------------------------
@@ -165,7 +163,9 @@ update_status ModulePlayer::Update(float dt)
 	if (App->input->GetKey(SDL_SCANCODE_R))
 	{
 		App->audio->PlayFx(spawn_fx);
-		brake = BRAKE_POWER;
+		brake = BRAKE_POWER * 10000;
+		App->camera->Move(vec3(50.0f, 1.0f, -60.0f));
+		vehicle->SetTransform(&matrix);
 		switch (App->scene_intro->checkpoint)
 		{
 		case 0:
