@@ -62,9 +62,27 @@ bool ModuleSceneIntro::Start()
 
 
 	//constraint
-	constraint_1 = Createconstraint(constraint1, vec3(0.25, 10.5, 1), vec3(-76.5, 7.245, 55), 90);
-	engine_1 = Createengine(engine1, vec3(-76.5, 7.245, 57), 90);
+	constraint_1 = Createconstraint(constraint1, vec3(1, 16, 3), vec3(-161.7f, 11, 26), 90);
+	engine_1 = Createengine(engine1, vec3(-161.7f, 11, 28), 90);
 	App->physics->AddConstraintHinge(*engine_1, *constraint_1, vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 0, 0), true, true);
+
+	constraint_2 = Createconstraint(constraint2, vec3(1, 16, 3), vec3(-161.7f, 11, -52), 90);
+	engine_2 = Createengine(engine2, vec3(-161.7f, 11, -50), 90);
+	App->physics->AddConstraintHinge(*engine_2, *constraint_2, vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 0, 0), true, true);
+
+	constraint_3 = Createconstraint(constraint3, vec3(1, 16, 3), vec3(-122.7f, 11, -25), 90);
+	engine_3 = Createengine(engine3, vec3(-122.7f, 11, -27), 90);
+	App->physics->AddConstraintHinge(*engine_3, *constraint_3, vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 0, 0), true, true);
+
+	constraint_4 = Createconstraint(constraint4, vec3(1, 16, 3), vec3(10, 11, 175), 180);
+	engine_4 = Createengine(engine4, vec3(10, 11, 175), 180);
+	App->physics->AddConstraintHinge(*engine_4, *constraint_4, vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 0, 0), true, true);
+
+	constraint_5 = Createconstraint(constraint5, vec3(1, 16, 3), vec3(30, 11, 175), 190);
+	engine_5 = Createengine(engine5, vec3(30, 11, 175), 0);
+	App->physics->AddConstraintHinge(*engine_5, *constraint_5, vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 0, 0), true, true);
+
+
 
 	s.size = vec3(10, 1, 150);//1
 	s.color = Green;
@@ -878,6 +896,18 @@ update_status ModuleSceneIntro::Update(float dt)
 	checkpoint3.Render();
 	checkpoint4.Render();
 
+
+	//constraints
+	constraint1.Render();
+	constraint_1->GetTransform(&constraint1.transform);
+	constraint2.Render();
+	constraint_2->GetTransform(&constraint2.transform);
+	constraint3.Render();
+	constraint_3->GetTransform(&constraint3.transform);
+	constraint4.Render();
+	constraint_4->GetTransform(&constraint4.transform);
+	constraint5.Render();
+	constraint_5->GetTransform(&constraint5.transform);
 	//circuito
 	s.Render();
 	s1.Render();
@@ -1037,7 +1067,7 @@ PhysBody3D* ModuleSceneIntro::Createconstraint(Cube &cube, vec3 size, vec3 pos, 
 	cube.size = size;
 	cube.SetPos(pos.x, pos.y, pos.z);
 	cube.SetRotation(angle, vec3(0, 1, 0));
-	cube.color = Red;
+	cube.color = Blue;
 	wall_pbody = App->physics->AddBody(cube, 10000.0f);
 	wall_pbody->GetBody()->setLinearFactor(btVector3(0, 0, 0));
 	return wall_pbody;

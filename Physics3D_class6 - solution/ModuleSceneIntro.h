@@ -31,6 +31,32 @@ public:
 
 	Cylinder engine1; 
 	PhysBody3D *engine_1;
+	
+	Cube constraint2;
+	PhysBody3D *constraint_2;
+
+	Cylinder engine2;
+	PhysBody3D *engine_2;
+
+	Cube constraint3;
+	PhysBody3D *constraint_3;
+
+	Cylinder engine3;
+	PhysBody3D *engine_3;
+
+	Cube constraint4;
+	PhysBody3D *constraint_4;
+
+	Cylinder engine4;
+	PhysBody3D *engine_4;
+
+	Cube constraint5;
+	PhysBody3D *constraint_5;
+
+	Cylinder engine5;
+	PhysBody3D *engine_5;
+
+
 
 	Cube s, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21;
 	Cube s22, s23, s24, s25, s26, s27, s28, s29, s30, s31, s32, s33, s34, s35, s36, s37, s38, s39, s40, s41, s42;
