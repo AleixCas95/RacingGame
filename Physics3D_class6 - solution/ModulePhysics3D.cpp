@@ -344,7 +344,7 @@ Cube ModulePhysics3D::CreateCube(float x, float y, float z, float PosX, float Po
 }
 
 
-Cube ModulePhysics3D::CreateCubeXrotation(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color, int angle)
+Cube ModulePhysics3D::CreateCubeYrotation(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color, int angle)
 {
 	Cube c;
 	c.size.x = x;
@@ -359,7 +359,7 @@ Cube ModulePhysics3D::CreateCubeXrotation(float x, float y, float z, float PosX,
 }
 
 
-Cube ModulePhysics3D::CreateCubeYrotation(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color, int angle)
+Cube ModulePhysics3D::CreateCubeXrotation(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color, int angle)
 {
 	Cube c;
 	c.size.x = x;

@@ -1,2 +1,6 @@
-﻿  ModuleSceneIntro.cpp
-  3D Physics.vcxproj -> C:\Users\leix_\OneDrive\Documentos\GitHub\RacingGame\Physics3D_class6 - solution\Debug\3D Physics - class6.exe
+﻿  ModulePhysics3D.cpp
+c:\users\albert cayuela\desktop\racinggame\physics3d_class6 - solution\modulephysics3d.cpp(116): warning C4552: '!=': el operador no tiene efecto; se esperaba un operador con efecto secundario
+c:\users\albert cayuela\desktop\racinggame\physics3d_class6 - solution\modulephysics3d.cpp(356): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\albert cayuela\desktop\racinggame\physics3d_class6 - solution\modulephysics3d.cpp(371): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\albert cayuela\desktop\racinggame\physics3d_class6 - solution\modulephysics3d.cpp(417): warning C4305: 'argumento': truncamiento de 'unsigned int' a 'btScalar'
+  3D Physics.vcxproj -> C:\Users\Albert Cayuela\Desktop\RacingGame\Physics3D_class6 - solution\Debug\3D Physics - class6.exe
