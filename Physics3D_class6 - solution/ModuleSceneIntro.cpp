@@ -39,9 +39,9 @@ bool ModuleSceneIntro::Start()
 	sensormeta1->SetAsSensor(true);
 	sensormeta1->collision_listeners.add(this);
 
-	s100 = App->physics->CreateCube(1,20,1, -5,0,-20, 0.0f, Green);
-	s101 = App->physics->CreateCube(1, 20, 1, 5, 0, -20, 0.0f, Green);
-	s102 = App->physics->CreateCube(11, 1, 1, 0, 10, -20, 0.0f, Green);
+	s100 = App->physics->CreateCube(1,5,1, 5.2f,7,-20, 0.0f, Green);
+	s101 = App->physics->CreateCube(1, 5, 1, -5, 7, -20, 0.0f, Green);
+	s102 = App->physics->CreateCube(11.3f, 1, 1, 0.1f, 10, -20, 0.0f, Green);
 
 	checkpoint1.size = vec3(1, 15, 15);
 	checkpoint1.SetPos(130, 2, 66.5f);
