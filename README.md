@@ -38,6 +38,7 @@ F1: Show sensors.
 - Unlimited Laps to win/loss with a timer.
 - Some moving obstacles(constraints) and non moving obstacles.
 - CheckPoints to make sure everyone follows the same way.
+- KM/h Speed limit 90.
 
 ## Tools used
 
