@@ -27,13 +27,18 @@ public:
 	update_status PostUpdate(float dt);
 	bool CleanUp();
 
+	Cube CreateCube(float x, float y, float z, float xpos, float ypos, float zpos, float mass, Color color);
+	Cube CreateCubeYrotation(float x, float y, float z, float xpos, float ypos, float zpos, float mass, Color color, int angle);
+	Cube CreateCubeXrotation(float x, float y, float z, float xpos, float ypos, float zpos, float mass, Color color, int angle);
+	Cylinder CreateCylinder(float radius, float height, float xpos, float ypos, float zpos, float mass, Color color);
+
 	PhysBody3D* AddBody(const Sphere& sphere, float mass = 1.0f);
 	PhysBody3D* AddBody(const Cube& cube, float mass = 1.0f);
 	PhysBody3D* AddBody(const Cylinder& cylinder, float mass = 1.0f);
 	PhysVehicle3D* AddVehicle(const VehicleInfo& info);
-
 	void AddConstraintP2P(PhysBody3D& bodyA, PhysBody3D& bodyB, const vec3& anchorA, const vec3& anchorB);
-	void AddConstraintHinge(PhysBody3D& bodyA, PhysBody3D& bodyB, const vec3& anchorA, const vec3& anchorB, const vec3& axisS, const vec3& axisB, bool disable_collision = false);
+	void AddConstraintHinge(PhysBody3D & bodyA, PhysBody3D & bodyB, const vec3 & anchorA, const vec3 & anchorB, const vec3 & axisA, const vec3 & axisB, bool disable_collision=false, bool engine=false);
+	
 
 private:
 

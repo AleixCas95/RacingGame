@@ -329,6 +329,67 @@ PhysVehicle3D* ModulePhysics3D::AddVehicle(const VehicleInfo& info)
 	return pvehicle;
 }
 
+Cube ModulePhysics3D::CreateCube(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color)
+{
+	Cube c;
+	c.size.x = x;
+	c.size.y = y;
+	c.size.z = z;
+	c.SetPos(PosX, PosY, PosZ);
+	c.color = color;
+	float mass2 = mass;
+
+	c.body = AddBody(c, mass2);
+	return c;
+}
+
+
+Cube ModulePhysics3D::CreateCubeXrotation(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color, int angle)
+{
+	Cube c;
+	c.size.x = x;
+	c.size.y = y;
+	c.size.z = z;
+	c.SetPos(PosX, PosY, PosZ);
+	c.color = color;
+	float mass2 = mass;
+	c.SetRotation(angle, vec3(1, 0, 0));
+	c.body = AddBody(c, mass2);
+	return c;
+}
+
+
+Cube ModulePhysics3D::CreateCubeYrotation(float x, float y, float z, float PosX, float PosY, float PosZ, float mass, Color color, int angle)
+{
+	Cube c;
+	c.size.x = x;
+	c.size.y = y;
+	c.size.z = z;
+	c.SetPos(PosX, PosY, PosZ);
+	c.color = color;
+	float mass2 = mass;
+	c.SetRotation(angle, vec3(0, 1, 0));
+	c.body = AddBody(c, mass2);
+	return c;
+}
+
+
+
+Cylinder ModulePhysics3D::CreateCylinder(float radius, float height, float PosX, float PosY, float PosZ, float mass, Color color)
+{
+	Cylinder cyl;
+	cyl.radius = radius;
+	cyl.height = height;
+	cyl.SetPos(PosX, PosY, PosZ);
+	cyl.color = color;
+	cyl.SetRotation(90, vec3(0, 0, 1));
+	float mass3 = mass;
+
+	AddBody(cyl, mass3);
+	return cyl;
+}
+
+
 // ---------------------------------------------------------
 void ModulePhysics3D::AddConstraintP2P(PhysBody3D& bodyA, PhysBody3D& bodyB, const vec3& anchorA, const vec3& anchorB)
 {
@@ -342,7 +403,7 @@ void ModulePhysics3D::AddConstraintP2P(PhysBody3D& bodyA, PhysBody3D& bodyB, con
 	p2p->setDbgDrawSize(2.0f);
 }
 
-void ModulePhysics3D::AddConstraintHinge(PhysBody3D& bodyA, PhysBody3D& bodyB, const vec3& anchorA, const vec3& anchorB, const vec3& axisA, const vec3& axisB, bool disable_collision)
+void ModulePhysics3D::AddConstraintHinge(PhysBody3D& bodyA, PhysBody3D& bodyB, const vec3& anchorA, const vec3& anchorB, const vec3& axisA, const vec3& axisB, bool disable_collision, bool engine)
 {
 	btHingeConstraint* hinge = new btHingeConstraint(
 		*(bodyA.body), 
@@ -351,6 +412,10 @@ void ModulePhysics3D::AddConstraintHinge(PhysBody3D& bodyA, PhysBody3D& bodyB, c
 		btVector3(anchorB.x, anchorB.y, anchorB.z),
 		btVector3(axisA.x, axisA.y, axisA.z), 
 		btVector3(axisB.x, axisB.y, axisB.z));
+
+	if (engine) {
+		hinge->enableAngularMotor(true, 10000.0f, INFINITE);
+	}
 
 	world->addConstraint(hinge, disable_collision);
 	constraints.add(hinge);

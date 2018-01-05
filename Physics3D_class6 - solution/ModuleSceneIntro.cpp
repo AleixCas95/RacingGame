@@ -61,6 +61,11 @@ bool ModuleSceneIntro::Start()
 	sensorcheckpoint4->collision_listeners.add(this);
 
 
+	//constraint
+	constraint_1 = Createconstraint(constraint1, vec3(0.25, 10.5, 1), vec3(-76.5, 7.245, 55), 90);
+	engine_1 = Createengine(engine1, vec3(-76.5, 7.245, 57), 90);
+	App->physics->AddConstraintHinge(*engine_1, *constraint_1, vec3(0, 0, 0), vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 0, 0), true, true);
+
 	s.size = vec3(10, 1, 150);//1
 	s.color = Green;
 	s1.size = vec3(1, 2, 150);//pdreta
@@ -1024,4 +1029,28 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 	}
 
 	LOG("Hit!");
+}
+
+PhysBody3D* ModuleSceneIntro::Createconstraint(Cube &cube, vec3 size, vec3 pos, float angle) {
+
+	PhysBody3D* wall_pbody;
+	cube.size = size;
+	cube.SetPos(pos.x, pos.y, pos.z);
+	cube.SetRotation(angle, vec3(0, 1, 0));
+	cube.color = Red;
+	wall_pbody = App->physics->AddBody(cube, 10000.0f);
+	wall_pbody->GetBody()->setLinearFactor(btVector3(0, 0, 0));
+	return wall_pbody;
+}
+
+PhysBody3D* ModuleSceneIntro::Createengine(Cylinder &cylinder, vec3 pos, float angle) {
+
+	PhysBody3D* wall_pbody;
+	cylinder.height = 2;
+	cylinder.radius = 0.1f;
+	cylinder.SetPos(pos.x, pos.y, pos.z);
+	cylinder.SetRotation(angle, vec3(0, 1, 0));
+	wall_pbody = App->physics->AddBody(cylinder, 10000.0f);
+	wall_pbody->GetBody()->setLinearFactor(btVector3(0, 0, 0));
+	return wall_pbody;
 }
