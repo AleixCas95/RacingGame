@@ -25,7 +25,7 @@ public:
 	int timelap[50];
 	int fastlapminutes = 0;
 	int fastlapseconds = 0;
-
+	uint spawn_fx;
 
 	PhysVehicle3D* vehicle;
 	float turn;

@@ -53,6 +53,7 @@ public:
 	int fastlap;
 	int checkpoint = 0;
 
-	
+	uint checkpoint_fx;
+	uint meta_fx;
 	
 };

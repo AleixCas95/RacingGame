@@ -21,6 +21,12 @@ bool ModulePlayer::Start()
 
 	VehicleInfo car;
 
+	//sounds
+	spawn_fx = App->audio->LoadFx("RacingGame/spawn_fx.wav");
+	
+	
+	App->audio->PlayMusic("RacingGame/musicrace.oga",0);
+
 	// Car properties ----------------------------------------
 	car.chassis_size.Set(0.9f, 0.9f, 1.5f);
 	car.chassis_offset.Set(0, 1.5, 0);
@@ -131,6 +137,7 @@ update_status ModulePlayer::Update(float dt)
 	if ((App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT) && (vehicle->GetKmh()<90))
 	{
 		acceleration = MAX_ACCELERATION;
+		//App->audio->PlayFx(engine_fx);
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
@@ -157,6 +164,7 @@ update_status ModulePlayer::Update(float dt)
 	//Respawn
 	if (App->input->GetKey(SDL_SCANCODE_R))
 	{
+		App->audio->PlayFx(spawn_fx);
 		brake = BRAKE_POWER;
 		switch (App->scene_intro->checkpoint)
 		{

@@ -15,12 +15,16 @@ ModuleSceneIntro::~ModuleSceneIntro()
 // Load assets
 bool ModuleSceneIntro::Start()
 {
+	
 	LOG("Loading Intro assets");
 	bool ret = true;
 
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 
+	//sounds
+	checkpoint_fx = App->audio->LoadFx("RacingGame/checkpoint_fx.wav");
+	meta_fx = App->audio->LoadFx("RacingGame/meta_fx.wav");
 	//sensor meta
 	sensormeta.size = vec3(15, 15, 1);
 	sensormeta.SetPos(0, 0, -20);
@@ -978,6 +982,7 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
 	if ((body1 == sensormeta1) && (collision == false))
 	{
+		App->audio->PlayFx(meta_fx);
 		App->player->timelap[laps] = (App->scene_intro->lap_timer.Read() / 1000) + (App->player->minutes * 60);
 		if (laps <= 1)fastlap = App->player->timelap[laps];
 		else if ((laps > 1) && (fastlap>(App->player->timelap[laps])))
@@ -995,22 +1000,26 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 
 	if (body1 == sensorcheckpoint1) 
 	{
+		App->audio->PlayFx(checkpoint_fx);
 		checkpoint = 1;
 		collision = false;
 	}
 
 	if(body1 == sensorcheckpoint2) 
 	{
+		App->audio->PlayFx(checkpoint_fx);
 		checkpoint = 2;
 	}
 
 	if (body1 == sensorcheckpoint3)
 	{
+		App->audio->PlayFx(checkpoint_fx);
 		checkpoint = 3;
 	}
 
 	if (body1 == sensorcheckpoint4) 
 	{
+		App->audio->PlayFx(checkpoint_fx);
 		checkpoint = 4;
 	}
 
