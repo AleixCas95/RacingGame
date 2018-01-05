@@ -35,7 +35,7 @@ F1: Show sensors.
 ## Things that we implemented on this game:
 
 - A circuit.
-- 3 Laps to win/loss with a timer.
+- Unlimited Laps to win/loss with a timer.
 - Some moving obstacles(constraints) and non moving obstacles.
 - CheckPoints to make sure everyone follows the same way.
 
