@@ -25,7 +25,9 @@ UP ARROW: Move to the front.
 
 DOWN ARROW: Move to the back.
 
-R: respawn on the last checkpoint
+R: respawn on the last checkpoint.
+
+RIGTCLICK AND MOVE: To move the camara from the car view.
 
 F1: Show sensors.
 
