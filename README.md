@@ -8,7 +8,9 @@ The main goal here is to create a racing car game.
 
 ## Members
 Aleix Castillo Arrià (AleixCas95),
+
 Albert Cayuela Naval (AlbertCayuela)
+
 OUR GITHUB REPOSITORY: https://github.com/AleixCas95/RacingGame
 
 ## Inputs
@@ -16,10 +18,15 @@ OUR GITHUB REPOSITORY: https://github.com/AleixCas95/RacingGame
 ### Keybord Inputs
 
 LEFT ARROW: Move to the left side.
+
 RIGHT ARROW: Move to the right side.
+
 UP ARROW: Move to the front.
+
 DOWN ARROW: Move to the back.
+
 R: respawn on the last checkpoint
+
 F1: Show sensors.
 
 
