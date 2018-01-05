@@ -25,7 +25,6 @@ F1: Show sensors.
 
 ## Things that we implemented on this game:
 
-In this racing game you have:
 - A circuit.
 - 3 Laps to win/loss with a timer.
 - Some moving obstacles(constraints) and non moving obstacles.
