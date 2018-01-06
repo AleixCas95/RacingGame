@@ -27,12 +27,6 @@ bool ModuleSceneIntro::Start()
 	meta_fx = App->audio->LoadFx("RacingGame/meta_fx.wav");
 
 	//meta
-	//sensormeta = App->physics->CreateCube(15, 15, 1, 0, 0, -20, 0.0f, White);
-	//checkpoints
-	/*checkpoint1 = App->physics->CreateCube(1, 15, 15, 130, 2, 66.5f, 0.0f, White);
-	checkpoint2 = App->physics->CreateCube(1, 15, 15, 158.4f, 2, 166.1f, 0.0f, White);
-	checkpoint3 = App->physics->CreateCube(15, 15, 1, -132.7f,2,96, 0.0f, White);
-	checkpoint4 = App->physics->CreateCube(1, 15, 15, -82.7f, 2, -99, 0.0f, White);*/
 	sensormeta.size = vec3(15, 15, 1);
 	sensormeta.SetPos(0, 0, -20);
 	sensormeta1 = App->physics->AddBody(sensormeta, 0.0f);
@@ -204,10 +198,6 @@ bool ModuleSceneIntro::Start()
 	s88.SetPos(-100, 2, 173);
 	s89.SetPos(90, 2, 173);
 
-	// *sensormeta1, *sensorcheckpoint1, *sensorcheckpoint2, *sensorcheckpoint3, *sensorcheckpoint4;
-
-	
-
 
 	sensor85 = App->physics->AddBody(s85, 0.0f);
 	sensor85->SetAsSensor(false);
@@ -260,14 +250,6 @@ update_status ModuleSceneIntro::Update(float dt)
 	constraint5.Render();
 	constraint_5->GetTransform(&constraint5.transform);
 
-
-	//checkpoints y meta
-	/*sensormeta.Render();
-	checkpoint1.Render();
-	checkpoint2.Render();
-	checkpoint3.Render();
-	checkpoint4.Render();
-*/
 	//circuito
 	s100.Render();
 	s101.Render();
