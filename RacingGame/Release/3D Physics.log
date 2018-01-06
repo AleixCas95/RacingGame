@@ -1,0 +1,40 @@
+﻿  Application.cpp
+  Color.cpp
+  glmath.cpp
+glmath.cpp(12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(43): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(53): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(72): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(87): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(103): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(600): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(618): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(758): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+glmath.cpp(778): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  Light.cpp
+  log.cpp
+  Main.cpp
+  ModuleAudio.cpp
+  ModuleCamera3D.cpp
+ModuleCamera3D.cpp(55): warning C4305: '=': truncamiento de 'double' a 'float'
+ModuleCamera3D.cpp(67): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+ModuleCamera3D.cpp(71): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  ModuleInput.cpp
+  ModulePhysics3D.cpp
+ModulePhysics3D.cpp(356): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+ModulePhysics3D.cpp(371): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+ModulePhysics3D.cpp(417): warning C4305: 'argumento': truncamiento de 'unsigned int' a 'btScalar'
+  ModulePlayer.cpp
+ModulePlayer.cpp(41): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+  ModuleRenderer3D.cpp
+  ModuleSceneIntro.cpp
+  ModuleWindow.cpp
+  PhysBody3D.cpp
+  PhysVehicle3D.cpp
+  Primitive.cpp
+  Timer.cpp
+  Generando código
+  All 460 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+  3D Physics.vcxproj -> C:\Users\Albert Cayuela\Desktop\RacingGame\RacingGame\Release\3D Physics - class6.exe
